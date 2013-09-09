@@ -263,11 +263,11 @@ lore.ore.ui.graphicalEditor = Ext.extend(Ext.Panel,{
                 lore.ore.ui.relsgrid.getSelectionModel().selectFirstRow();
                 // Connection: only show relationships grid
                 lore.ore.ui.nodegrid.store.removeAll();
-                lore.ore.ui.nodegrid.collapse();
+                //lore.ore.ui.nodegrid.collapse();
                
             }
-            lore.ore.ui.relsgrid.expand();
-            lore.ore.ui.grid.collapse();
+            //lore.ore.ui.relsgrid.expand();
+            //lore.ore.ui.grid.collapse();
         } else {
             //lore.ore.ui.nodegrid.store.removeAll();
             lore.ore.ui.nodegrid.bindModel(null);
@@ -275,13 +275,13 @@ lore.ore.ui.graphicalEditor = Ext.extend(Ext.Panel,{
             
             // Background selected: only show Resource Map properties
             if (lore.ore.ui.relsgrid.el) {
-            	lore.ore.ui.relsgrid.collapse();
+            	//lore.ore.ui.relsgrid.collapse();
             }
             if (lore.ore.ui.grid.el) {
-            	lore.ore.ui.grid.expand();
+            	//lore.ore.ui.grid.expand();
             }
             if (lore.ore.ui.nodegrid.el) {
-            	lore.ore.ui.nodegrid.collapse();
+            	//lore.ore.ui.nodegrid.collapse();
             }
             
             // force hide mask (sometimes can still be in place when selection/deselection happens very quickly)

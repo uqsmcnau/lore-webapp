@@ -427,7 +427,8 @@ lore.ore.repos.SPARQLAdapter = Ext.extend(lore.ore.repos.RepositoryAdapter,{
         var xhr = new XMLHttpRequest();                
         xhr.overrideMimeType('text/xml');
         var oThis = this;
-        xhr.open("GET", this.reposURL + this.graphStoreEndPoint + "?graph=" + remid);
+        xhr.open("PUT", this.reposURL + this.graphStoreEndPoint + "?graph=" + remid);
+        xhr.setRequestHeader("Content-type","application/turtle");
         xhr.onreadystatechange= function(){
             if (xhr.readyState == 4) {
                 lore.debug.ore("lorestore: RDF saved");
@@ -435,7 +436,7 @@ lore.ore.repos.SPARQLAdapter = Ext.extend(lore.ore.repos.RepositoryAdapter,{
                 callback(remid);
             }
         };
-        xhr.send(null);
+        xhr.send(trigs);
     },
     /**
      * Remove a graph from the SPARQL repository
@@ -464,7 +465,7 @@ lore.ore.repos.SPARQLAdapter = Ext.extend(lore.ore.repos.RepositoryAdapter,{
             var xhr = new XMLHttpRequest();                
             xhr.overrideMimeType('text/xml');
             var oThis = this;
-            xhr.open("GET", url);
+            xhr.open("DELETE", url);
             xhr.onreadystatechange= function(){
                 if (xhr.readyState == 4) {
                 	callback(remid);

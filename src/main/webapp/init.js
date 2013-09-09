@@ -156,6 +156,22 @@ window.addEventListener('message', function(message){
 	
 	var props = {"dc:title_0" : 'dc:TITLE', "rdf:type" : lore.constants.BASIC_OBJECT_TYPE};
 	
+	if (data.metadata) {
+		for (var i = 0; i < data.metadata.length; i++) {
+			if (data.metadata[i]) {				
+				var label = data.metadata[i].label;
+				var uri = data.metadata[i].uri;
+				var value =  data.metadata[i].value;
+				
+				if (label == "Title") {
+					props["dc:title_0"] = value;
+				} else {
+					props[uri] = value;
+				}
+			}
+		}
+	}
+	
 	lore.ore.ui.graphicalEditor.addFigure({url:data.url, props: props, 
     	rdftype : lore.constants.BASIC_OBJECT_TYPE,
 		oh: 170, h: 30, w: 180}, true);

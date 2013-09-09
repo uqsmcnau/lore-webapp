@@ -502,3 +502,6 @@ div.coListing:hover {
 .x-details-panel { 
 	overflow: visible !important;
 }
+#searchResultPanel > .x-panel-bwrap > .x-panel-body {
+	height: 412px !important;
+}
