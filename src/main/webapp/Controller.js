@@ -622,7 +622,7 @@ Ext.apply(lore.ore.Controller.prototype, {
         });
     },
     lockCompoundObjectInRepository: function(){
-        if (!lore.ore.reposAdapter instanceof lore.ore.repos.SPARQLAdapter){
+        if (!lore.ore.reposAdapter instanceof lore.ore.repos.RestAdapter){
             Ext.Msg.show({
                 title: "Not supported",
                 msg: "Locking of Resource Maps is only supported for lorestore repositories.",

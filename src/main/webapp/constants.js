@@ -9,7 +9,9 @@ if (typeof lore !== "object"){
     var lore = {};   
 }
 lore.constants = {
-	 baseUrl: "http://localhost:8080/lore/",
+	 //baseUrl: "http://115.146.95.240/",
+	 baseUrl: "http://localhost/",
+	 //repositoryBaseURL: "http://localhost/lorestore/ore/",
 	 repositoryBaseURL: "http://localhost/op",
 	 repositoryGraphStoreEndPoint: "/data",
 	 repositoryGraphNamePrefix: "http://localhost/op/data/",

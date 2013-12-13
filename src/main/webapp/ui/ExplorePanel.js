@@ -528,7 +528,7 @@ lore.ore.ui.ExplorePanel = Ext.extend(Ext.Panel,{
              });
             this.contextmenu.add({
 	            text : "Center visualisation",
-	            icon: "http://localhost:8080/lore/skin/icons/ore/arrow_move.png",
+	            icon: lore.constants.baseUrl + "skin/icons/ore/arrow_move.png",
 	            scope: this,
 	            handler : function(evt) {	             	            	
 	              var left, right, top, bottom;
@@ -553,11 +553,7 @@ lore.ore.ui.ExplorePanel = Ext.extend(Ext.Panel,{
 	            	  if (!bottom || cBottom > bottom) {
 	            		  bottom = cBottom;
 	            	  }
-	              }	       	              
-	              console.log("Yoman-1");
-	              console.log($("#exploreinfovis")[0]);
-	              console.log($("#exploreinfovis")[0].clientWidth);
-	              console.log($("#exploreinfovis")[0].clientHeight);
+	              }
 	              this.fd.canvas.translate(((($("#exploreinfovis")[0].clientWidth) - (left + right)) / 2) 
 	            		  / this.fd.canvas.scaleOffsetX, ((($("#exploreinfovis")[0].clientHeight) 
 	            				  - (top + 20 + bottom)) / 2) / this.fd.canvas.scaleOffsetY);
