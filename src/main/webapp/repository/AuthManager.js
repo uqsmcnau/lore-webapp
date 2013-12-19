@@ -131,9 +131,13 @@ lore.AuthManager = Ext.extend(Ext.util.Observable, {
             var authorities = principal.authorities;
             var authorised = this.hasAuthority(authorities, "ROLE_USER") &&
                 this.hasAuthority(authorities, "ROLE_ORE");
+
+            if (principal.username) {
+            	principal.userName = principal.username;
+            }
             
             if (authorised) {
-                this.fireSignedIn(principal.userName);
+                this.fireSignedIn(principal.username);
                 if (typeof options.callIfAuthorised == 'function') {
                     options.callIfAuthorised(principal);
                 }
@@ -174,8 +178,12 @@ lore.AuthManager = Ext.extend(Ext.util.Observable, {
                 callback(principal);
             }
         });
-        this.ifNotAuthenticated(function() {
-            t.popupLoginWindow(callback);
+        
+        this.ifNotAuthenticated(function(principal) {
+        	Ext.Msg.show({
+    		   msg: 'Unable to complete action. Please log in.',
+    		   buttons: Ext.Msg.OK
+    		});
         });
     },
 

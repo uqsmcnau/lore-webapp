@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>Lore-Webapp</finalName>
+    <finalName>ROOT</finalName>
   </build>
 </project>

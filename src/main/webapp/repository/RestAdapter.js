@@ -95,15 +95,15 @@ lore.ore.repos.RestAdapter = Ext.extend(lore.ore.repos.RepositoryAdapter,{
 
         var therdf = theco.serialize('rdf');
         var oThis = this;
-        Ext.Msg.show({
+        /*Ext.Msg.show({
                msg: 'Saving Resource Map to repository...',
                width:250,
                defaultTextHeight: 0,
                closable: false,
                cls: 'co-load-msg'
-           });
+           });*/
         try {
-          lore.ore.AuthManager.runWithAuthorisation(function() {
+          lore.ore.authManager.runWithAuthorisation(function() {
                 var xhr = new XMLHttpRequest();
                 var theURL = "";
                 if (remid.indexOf(oThis.unsavedSuffix) > 1) { 
@@ -174,7 +174,7 @@ lore.ore.repos.RestAdapter = Ext.extend(lore.ore.repos.RepositoryAdapter,{
         // TODO: first check that it hasn't been changed on the server
         lore.debug.ore("deleting from lorestore repository " + remid);
         try {
-          lore.ore.AuthManager.runWithAuthorisation(function() {
+          lore.ore.authManager.runWithAuthorisation(function() {
             var xhr = new XMLHttpRequest();
             xhr.open("DELETE", remid);  
             xhr.onreadystatechange= function(){
@@ -278,6 +278,7 @@ lore.ore.repos.RestAdapter = Ext.extend(lore.ore.repos.RepositoryAdapter,{
         var bindings, node, attr, nodeVal;
         props.title = "Untitled";
         props.creator = "Anonymous";
+        props.entryType = lore.constants.COMPOUND_OBJECT_TYPE;
         try {  
            bindings = result.getElementsByTagName('binding');
            for (var j = 0; j < bindings.length; j++){  

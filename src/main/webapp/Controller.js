@@ -215,6 +215,10 @@ Ext.apply(lore.ore.Controller.prototype, {
 	        } else if (typeof rdf.responseXML != 'undefined') {
 	            showInHistory = true;
 	            rdfDoc = rdf.responseXML;
+	        } else if (typeof rdf.responseText != 'undefined') {
+	            showInHistory = true;
+	            parser=new DOMParser();
+	            rdfDoc=parser.parseFromString(rdf.responseText,"text/xml");
 	        } else {
 	        	rdfDoc = rdf;
 	        }
@@ -1597,7 +1601,7 @@ Ext.apply(lore.ore.Controller.prototype, {
             if (currentCOMsg) {currentCOMsg.setText(Ext.util.Format.ellipsis(title, 50),false);}
         }
                 
-        lore.ore.reposAdapter = new lore.ore.repos.SPARQLAdapter(rdfrepos);
+        lore.ore.reposAdapter = new lore.ore.repos.RestAdapter(rdfrepos);
         
         if (isEmpty) {
                 // empty Resource Map, reset it to get a new id

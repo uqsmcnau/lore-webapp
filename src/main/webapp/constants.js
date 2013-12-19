@@ -9,12 +9,10 @@ if (typeof lore !== "object"){
     var lore = {};   
 }
 lore.constants = {
-	 //baseUrl: "http://115.146.95.240/",
-	 baseUrl: "http://localhost/",
-	 //repositoryBaseURL: "http://localhost/lorestore/ore/",
-	 repositoryBaseURL: "http://localhost/op",
+	 baseUrl: "http://115.146.95.240/",
+	 repositoryBaseURL: "http://115.146.95.240/lorestore/ore/",
 	 repositoryGraphStoreEndPoint: "/data",
-	 repositoryGraphNamePrefix: "http://localhost/op/data/",
+	 repositoryGraphNamePrefix: "http://115.146.95.240/op/data/",
 
 	 /*baseUrl: "http://115.146.93.139/virtual_lab/toolLibrary/annotation/lore-test-2/", 	 
 	 repositoryBaseURL: "http://corbicula.huni.net.au/dataset",
