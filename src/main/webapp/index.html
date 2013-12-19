@@ -157,7 +157,7 @@
 	            lore.ore.authManager = new lore.AuthManager(window);
 	            lore.ore.authManager.on('signedin', setSignedIn, this);
 	            lore.ore.authManager.on('signedout', setSignedOut, this);
-	            lore.ore.authManager.reloadEmmetUrls({url: lore.constants.repositoryBaseURL + "lorestore"});
+	            lore.ore.authManager.reloadEmmetUrls({url: lore.constants.baseUrl + "lorestore"});
                 
 	            var basicSearchButton = new Ext.Action({
 	                text: '<b>Search</b>',
