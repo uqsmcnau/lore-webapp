@@ -21,7 +21,7 @@ We use eclipse to import lorestore into the workspace as a Maven project (using 
 
 To deploy, copy the webapp folder into an appropiate server webapp folder. 
 
-Direct the browser to /compound.html, to access funtionality.
+Direct the browser to compound.html, to access funtionality.
 
 ## History
 
